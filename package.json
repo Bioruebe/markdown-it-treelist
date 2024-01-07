@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-plugin-template",
+  "name": "markdown-it-treelist",
   "version": "1.0.0",
-  "description": "A template for markdown-it plugins",
+  "description": "A markdown-it plugin, which adds new markup for lists, which can be displayed as a vertical tree structure",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bioruebe/markdown-it-plugin-template"
+    "url": "https://github.com/bioruebe/markdown-it-treelist"
   },
   "author": "bioruebe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bioruebe/markdown-it-plugin-template/issues"
+    "url": "https://github.com/bioruebe/markdown-it-treelist/issues"
   },
-  "homepage": "https://github.com/bioruebe/markdown-it-plugin-template",
+  "homepage": "https://github.com/bioruebe/markdown-it-treelist",
   "keywords": [
     "markdown",
     "markdown-it",
@@ -34,7 +34,9 @@
     "README.md"
   ],
   "devDependencies": {
+    "@types/js-beautify": "^1.14.2",
     "@types/markdown-it": "latest",
+    "js-beautify": "^1.14.9",
     "markdown-it": "latest",
     "typescript": "^5.0.3",
     "vite": "^4.0.0",

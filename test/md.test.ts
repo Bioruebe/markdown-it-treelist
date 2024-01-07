@@ -2,11 +2,18 @@
 
 import MarkdownIt from "markdown-it";
 import { describe, expect, it, test } from "vitest";
+import { html as beautify } from "js-beautify";
 
-import plugin from "../src";
+import plugin, { MarkdownItTreeListOptions } from "../src";
 const mdFiles = import.meta.glob("./**/*.md", { eager: true, as: "raw" });
 const htmlFiles = import.meta.glob("./**/*.html", { eager: true, as: "raw" });
 
+const options: MarkdownItTreeListOptions = {
+	cssClassTree: "tree",
+	cssClassRoot: "tree_root",
+	cssClassNode: "tree_node",
+	cssClassLeaf: "tree_leaf"
+};
 
 type TestCase = {
 	name: string;
@@ -16,7 +23,7 @@ type TestCase = {
 
 const ROOT_SUITE_NAME = "root";
 
-const md = MarkdownIt({ breaks: true }).use(plugin);
+const md = MarkdownIt({ breaks: true }).use(plugin, options);
 const suites = createTestDefinitions();
 
 for (const suite in suites) {
@@ -73,7 +80,10 @@ function createTestDefinitions() {
  */
 function createTestFunction({ input, output }: TestCase) {
 	return () => {
+		const options = { indent_size: 2 };
 		const parsed = md.render(input).trim();
-		expect(parsed).toEqual(output);
+		const expected = beautify(output, options);
+		const actual = beautify(parsed, options);
+		expect(actual).toEqual(expected);
 	};
 }
