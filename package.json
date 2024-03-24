@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-treelist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A markdown-it plugin, which adds new markup for lists, which can be displayed as a vertical tree structure",
   "type": "module",
   "exports": {
