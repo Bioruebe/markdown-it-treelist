@@ -1,8 +1,7 @@
 import type MarkdownIt from "markdown-it";
-import { isSpace } from "markdown-it/lib/common/utils";
-import Renderer from "markdown-it/lib/renderer";
-import StateBlock from "markdown-it/lib/rules_block/state_block";
-import Token from "markdown-it/lib/token";
+import type Renderer from "markdown-it/lib/renderer";
+import type StateBlock from "markdown-it/lib/rules_block/state_block";
+import type Token from "markdown-it/lib/token";
 
 
 export const defaultOptions = {
@@ -52,7 +51,7 @@ function skipListMarker(state: StateBlock, startLine: number) {
 	if (!hasMarker(state, pos)) return -1;
 
 	pos += 3;
-	if (pos < max && !isSpace(state.src.charCodeAt(pos))) return -1;
+	if (pos < max && !state.md.utils.isSpace(state.src.charCodeAt(pos))) return -1;
 
 	return pos + 1;
 }
