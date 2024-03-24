@@ -25,9 +25,9 @@ import MarkdownItTreelist from "markdown-it-treelist";
 const md = new MarkdownIt().use(MarkdownItTreelist, options);
 
 // CommonJS
-const markdown_it = require("markdown-it");
-const markdown_it_treelist = require("markdown-it-treelist");
-const md = markdown_it().use(markdown_it_treelist, options);
+const markdownIt = require("markdown-it");
+const markdownItTreelist = require("markdown-it-treelist");
+const md = markdownIt().use(markdownItTreelist, options);
 ```
 
 ### Syntax
