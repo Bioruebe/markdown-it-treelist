@@ -1,5 +1,5 @@
 import type MarkdownIt from "markdown-it";
-import { Renderer, StateBlock, Token } from "markdown-it";
+import type { Renderer, StateBlock, Token } from "markdown-it";
 
 
 export const defaultOptions = {
